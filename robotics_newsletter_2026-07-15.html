@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physical AI & Robotics Weekly — 2026.07.09–07.15</title>
+<style>
+  :root{
+    color-scheme: light;
+    --ink:#0f172a;
+    --sub:#5b6472;
+    --line:#e6e9ef;
+    --bg:#f4f6f9;
+    --card:#ffffff;
+    --accent:#1d4ed8;
+    --accent2:#0ea5a3;
+    --chip:#eef2ff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:0;
+    background:var(--bg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Pretendard","Apple SD Gothic Neo","Noto Sans KR",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:32px 16px 60px;}
+  .masthead{
+    background:linear-gradient(135deg,#0b1220 0%,#111c34 45%,#0d2b4a 100%);
+    border-radius:20px;
+    padding:36px 32px;
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+  }
+  .masthead::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(500px 200px at 85% -10%, rgba(59,130,246,.35), transparent 60%),
+      radial-gradient(400px 200px at 0% 110%, rgba(16,185,129,.25), transparent 60%);
+  }
+  .masthead-inner{position:relative;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:#93c5fd;font-weight:700;margin-bottom:14px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:#22d3ee;display:inline-block;}
+  h1.title{
+    font-size:28px;line-height:1.28;margin:0 0 10px;font-weight:800;letter-spacing:-.01em;
+  }
+  .subtitle{color:#c7d2e3;font-size:14.5px;line-height:1.6;margin:0 0 18px;max-width:520px;}
+  .meta-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+  .meta-pill{
+    background:rgba(255,255,255,.09);
+    border:1px solid rgba(255,255,255,.16);
+    color:#e5edff;
+    font-size:12px;font-weight:600;
+    padding:6px 12px;border-radius:999px;
+  }
+
+  .toc{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    margin-top:18px;
+    padding:20px 22px;
+  }
+  .toc-title{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--sub);font-weight:800;margin:0 0 12px;}
+  .toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;}
+  .toc-grid a{
+    color:var(--ink);text-decoration:none;font-size:13.5px;font-weight:600;
+    display:flex;align-items:center;gap:8px;padding:4px 0;
+  }
+  .toc-grid a .n{color:var(--accent);font-weight:800;font-variant-numeric:tabular-nums;}
+
+  .section{margin-top:38px;}
+  .section-head{display:flex;align-items:baseline;gap:10px;margin-bottom:16px;}
+  .section-tag{
+    font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+    padding:5px 10px;border-radius:8px;color:#fff;white-space:nowrap;
+  }
+  .section-head h2{font-size:19px;margin:0;font-weight:800;color:var(--ink);}
+  .section-desc{font-size:13px;color:var(--sub);margin:-8px 0 16px;}
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:20px 22px;
+    margin-bottom:12px;
+    box-shadow:0 1px 2px rgba(15,23,42,.03);
+  }
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:8px;}
+  .source-badge{
+    font-size:11px;font-weight:700;color:var(--accent);
+    background:var(--chip);padding:3px 9px;border-radius:7px;white-space:nowrap;
+  }
+  .date-badge{font-size:11.5px;color:var(--sub);font-weight:600;white-space:nowrap;}
+  .card h3{font-size:16px;line-height:1.45;margin:0 0 8px;font-weight:750;letter-spacing:-.005em;}
+  .card p{font-size:13.5px;line-height:1.65;color:#3b4353;margin:0 0 14px;}
+  .readlink{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:13px;font-weight:700;color:var(--accent);text-decoration:none;
+  }
+  .readlink:after{content:"→";transition:transform .15s;}
+
+  .divider{height:1px;background:var(--line);margin:38px 0;}
+
+  .stat-strip{
+    display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 6px;
+  }
+  .stat{
+    flex:1;min-width:140px;
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:14px 16px;
+  }
+  .stat b{display:block;font-size:19px;color:var(--ink);margin-bottom:2px;}
+  .stat span{font-size:11.5px;color:var(--sub);}
+
+  footer{
+    margin-top:44px;
+    text-align:center;
+    color:var(--sub);
+    font-size:12px;
+    line-height:1.8;
+  }
+  footer a{color:var(--accent);text-decoration:none;font-weight:600;}
+  .footer-logos{font-size:12px;color:#8b93a3;margin-top:6px;}
+
+  @media (max-width:480px){
+    .toc-grid{grid-template-columns:1fr;}
+    .masthead{padding:28px 20px;}
+    h1.title{font-size:23px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="masthead-inner">
+      <div class="eyebrow"><span class="dot"></span>Physical AI &amp; Robotics Weekly</div>
+      <h1 class="title">휴머노이드, Physical AI, 그리고 자율형 팹 — 이번 주 로보틱스 브리핑</h1>
+      <p class="subtitle">2026년 7월 9일 – 7월 15일, 로봇신문·로봇리포트를 비롯한 국내외 주요 매체를 종합한 주간 산업 동향입니다.</p>
+      <div class="meta-row">
+        <span class="meta-pill">📅 2026.07.09 – 07.15</span>
+        <span class="meta-pill">🤖 Humanoid · Physical AI</span>
+        <span class="meta-pill">🏭 Semiconductor FAB</span>
+        <span class="meta-pill">🛠️ Construction · Kitchen</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="toc">
+    <p class="toc-title">이번 호 목차</p>
+    <div class="toc-grid">
+      <a href="#humanoid"><span class="n">01</span> 휴머노이드 로봇</a>
+      <a href="#physicalai"><span class="n">02</span> Physical AI · VLA · RFM</a>
+      <a href="#omniverse"><span class="n">03</span> 옴니버스 · Isaac Sim</a>
+      <a href="#fab"><span class="n">04</span> 반도체 FAB 자동화</a>
+      <a href="#construction"><span class="n">05</span> 건설로봇</a>
+      <a href="#kitchen"><span class="n">06</span> 키친로봇</a>
+      <a href="#infra"><span class="n">07</span> 스크러버 · 배관청소로봇</a>
+    </div>
+  </div>
+
+  <!-- 01 HUMANOID -->
+  <div class="section" id="humanoid">
+    <div class="section-head">
+      <span class="section-tag" style="background:#1d4ed8;">01</span>
+      <h2>휴머노이드 로봇</h2>
+    </div>
+    <p class="section-desc">양산 경쟁과 대규모 투자가 동시에 가속화된 한 주였습니다.</p>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">로봇신문</span><span class="date-badge">2026.07.15</span></div>
+      <h3>손정의 회장 "2040년 휴머노이드 10억대 시대…인간은 '슈퍼휴먼'으로 진화해야"</h3>
+      <p>손정의 소프트뱅크그룹 회장이 2040년까지 휴머노이드 로봇이 10억 대 규모로 보급될 것이라 전망하며, 인간 역시 AI·로봇과 공진화하는 '슈퍼휴먼'으로 발전해야 한다고 강조했습니다.</p>
+      <a class="readlink" href="https://www.irobotnews.com/news/articleView.html?idxno=47436" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">The Robot Report</span><span class="date-badge">2026.07.09</span></div>
+      <h3>AI² Robotics, 휠형 휴머노이드로 7350만 달러 투자 유치 (밸류 30억 달러)</h3>
+      <p>중국 선전 소재 Ai2 Robotics가 휠 기반 휴머노이드 로봇 개발을 위해 국영·기업·금융 투자자로부터 7억3500만 달러를 유치, 기업가치 28억 달러를 인정받았습니다.</p>
+      <a class="readlink" href="https://www.therobotreport.com/ai%c2%b2-robotics-raises-735m-3b-valuation-wheeled-humanoid-robots/" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">The Robot Report</span><span class="date-badge">2026.07 초</span></div>
+      <h3>Tesollo, 휴머노이드 손(hand) 개발하며 IPO 절차 착수</h3>
+      <p>정밀 로봇 핸드 전문기업 Tesollo가 휴머노이드용 그리퍼·핸드 기술 개발을 이어가는 동시에 기업공개(IPO) 절차에 돌입했습니다.</p>
+      <a class="readlink" href="https://www.therobotreport.com/tesollo-initiates-ipo-process-developing-humanoid-hands/" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">The Robot Report</span><span class="date-badge">2026.06 말 – 07.초</span></div>
+      <h3>휴머노이드 제조사 Agility Robotics, SPAC 합병으로 상장 추진</h3>
+      <p>Agility Robotics가 SPAC(기업인수목적회사) 합병을 통해 순수 휴머노이드 로봇 기업으로는 최초로 공개시장에 상장할 계획을 밝혔습니다.</p>
+      <a class="readlink" href="https://www.therobotreport.com/humanoid-maker-agility-robotics-go-public-through-spac-merger/" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">로봇신문</span><span class="date-badge">2026.07.15</span></div>
+      <h3>中 창업자가 세운 패러데이퓨처 "올해 美서 로봇 2000대 출하"</h3>
+      <p>중국계 창업자가 이끄는 패러데이퓨처가 올해 미국 내에서 로봇 2000대를 출하하겠다는 목표를 공개하며 휴머노이드·모빌리티 로봇 시장 공략을 본격화합니다.</p>
+      <a class="readlink" href="https://www.irobotnews.com/news/articleView.html?idxno=47445" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 02 Physical AI / VLA / RFM -->
+  <div class="section" id="physicalai">
+    <div class="section-head">
+      <span class="section-tag" style="background:#0ea5a3;">02</span>
+      <h2>Physical AI · VLA · RFM</h2>
+    </div>
+    <p class="section-desc">로봇 파운데이션 모델(RFM) 출시 속도가 이틀에 하나꼴로 빨라지고 있습니다.</p>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">뉴스핌</span><span class="date-badge">2026.07.09</span></div>
+      <h3>SK AX, VLA 기반 피지컬 AI로 '자율형 공장' 시장 공략</h3>
+      <p>SK AX가 디지털 트윈·피지컬 AI·이기종 로봇 통합 관제를 결합한 '제조 RX 풀스택' 서비스를 출시했습니다. 현장 로봇에는 시각·언어·행동을 통합한 VLA 기반 피지컬 AI를 적용해 비정형 제조 환경에서도 스스로 판단·대응하도록 했으며, 반도체·조선 현장에 적용 범위를 넓히고 있습니다.</p>
+      <a class="readlink" href="https://www.newspim.com/news/view/20260709000225" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">The Robot Report</span><span class="date-badge">2026.07.11</span></div>
+      <h3>로봇도 '가상 체육관'에서 훈련해야 하는 이유</h3>
+      <p>SoftServe는 환경·과제 변동성에 대응하려면 로봇이 배포 전 '버추얼 짐(virtual gym)'에서 훈련해 시뮬레이션-실제 간 격차(sim-to-real gap)를 줄여야 한다고 제안합니다.</p>
+      <a class="readlink" href="https://www.therobotreport.com/why-robotics-teams-need-virtual-gyms-before-deployment/" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">MarkTechPost</span><span class="date-badge">2026.07.08</span></div>
+      <h3>Robbyant, 오픈소스 VLA 모델 'LingBot-VLA 2.0' 공개</h3>
+      <p>앤트그룹 산하 Robbyant가 60억 파라미터 규모의 크로스-임바디먼트 비전-언어-행동(VLA) 모델 LingBot-VLA 2.0을 아파치 2.0 라이선스로 공개했습니다. 서로 다른 로봇 바디에 재학습 없이 적용 가능한 것이 특징입니다.</p>
+      <a class="readlink" href="https://www.marktechpost.com/2026/07/08/lingbot-vla-2-0/" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+
+    <div class="stat-strip">
+      <div class="stat"><b>48시간마다 1개</b><span>2026년 6월, 신규 임바디드 AI 파운데이션 모델 출시 속도 (eWeek)</span></div>
+      <div class="stat"><b>$3.92B</b><span>로봇 파운데이션 모델 스타트업 누적 투자 유치액 (9개 딜)</span></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 03 Omniverse / Isaac Sim -->
+  <div class="section" id="omniverse">
+    <div class="section-head">
+      <span class="section-tag" style="background:#7c3aed;">03</span>
+      <h2>옴니버스 · Isaac Sim</h2>
+    </div>
+    <p class="section-desc">NVIDIA 생태계가 로봇 학습 데이터·시뮬레이션 인프라를 계속 확장 중입니다.</p>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">The Robot Report</span><span class="date-badge">2026.07.08</span></div>
+      <h3>NVIDIA와 Hugging Face, LeRobot에 신규 모델·프레임워크 지원</h3>
+      <p>오픈소스 로보틱스 라이브러리 Hugging Face LeRobot에 NVIDIA가 신규 모델과 프레임워크를 제공, 로봇 데이터셋·정책·워크플로우 학습과 공유를 더 쉽게 만듭니다.</p>
+      <a class="readlink" href="https://www.therobotreport.com/nvidia-hugging-face-bring-new-models-frameworks-lerobot/" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">업계 동향</span><span class="date-badge">진행 중</span></div>
+      <h3>ABB·FANUC·KUKA·야스카와, 옴니버스·Isaac Sim 기반 디지털 트윈 검증 확대</h3>
+      <p>전 세계 설치 대수 200만 대 이상을 보유한 4대 로봇 메이커가 NVIDIA Omniverse 라이브러리와 Isaac Sim 프레임워크로 복잡한 로봇 애플리케이션과 생산라인을 물리 기반 디지털 트윈에서 검증하고 있습니다. Isaac Sim에는 NuRec 신경 렌더링과 OpenUSD 기반 로봇·센서 스키마가 추가돼 sim-to-real 격차를 줄이고 있습니다.</p>
+      <a class="readlink" href="https://www.therobotreport.com/nvidia-isaac-omniverse-halos-aid-european-robotics-developers/" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 04 FAB automation -->
+  <div class="section" id="fab">
+    <div class="section-head">
+      <span class="section-tag" style="background:#ea580c;">04</span>
+      <h2>반도체 FAB 자동화</h2>
+    </div>
+    <p class="section-desc">삼성·SK가 로봇·AI 기반 무인 팹 경쟁에 속도를 내고 있습니다.</p>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">뉴스핌</span><span class="date-badge">2026.07.09</span></div>
+      <h3>SK AX '제조 RX 풀스택' — 반도체·조선 현장 로봇 통합 관제</h3>
+      <p>디지털 트윈으로 설비 배치·동선·자재 흐름을 가상 검증하고, 현장에는 VLA 기반 피지컬 AI를 적용. AMR·협동로봇·휴머노이드 등 이기종 로봇을 하나의 관제 체계로 통합해 MES와 연동, 반도체 산업에서 우선 실증 중입니다.</p>
+      <a class="readlink" href="https://www.newspim.com/news/view/20260709000225" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">로봇신문</span><span class="date-badge">2026.07.15</span></div>
+      <h3>하나증권 "HL만도, 로봇 액추에이터 9개 라인업 개발 중"</h3>
+      <p>HL만도가 휴머노이드·산업용 로봇에 들어가는 액추에이터 9개 라인업을 개발 중이라는 증권가 분석이 나왔습니다. 반도체·자동차 제조 로봇 부품 국산화 경쟁의 일환으로 해석됩니다.</p>
+      <a class="readlink" href="https://www.irobotnews.com/news/articleView.html?idxno=47435" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">로봇신문</span><span class="date-badge">2026.07.15</span></div>
+      <h3>교보증권 "LG전자, 엔비디아와 손잡고 로봇사업 본격 확대"</h3>
+      <p>LG전자가 엔비디아와의 협력을 기반으로 제조 자동화 및 로봇 사업을 확대하고 있다는 분석이 제기됐습니다.</p>
+      <a class="readlink" href="https://www.irobotnews.com/news/articleView.html?idxno=47433" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 05 Construction robots -->
+  <div class="section" id="construction">
+    <div class="section-head">
+      <span class="section-tag" style="background:#16a34a;">05</span>
+      <h2>건설로봇</h2>
+    </div>
+    <p class="section-desc">인력난·안전사고 대응 수단으로 건설 현장 로봇 도입이 확산되고 있습니다.</p>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">아주경제</span><span class="date-badge">2026.07.09</span></div>
+      <h3>로봇개부터 철근 조립 로봇까지…'K-건설'의 미래 담긴 건설의 날</h3>
+      <p>제36회 '2026 건설의 날' 행사에서 4족보행 로봇('로봇개')과 철근 조립 로봇 등을 선보인 '미래 K-건설 전시'가 열렸습니다. 정부는 R&D 투자와 산업 생태계 지원을 통한 스마트 건설 전환을 약속했습니다.</p>
+      <a class="readlink" href="https://www.ajunews.com/view/20260709154137155" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">Construction Enquirer</span><span class="date-badge">2026.07.06</span></div>
+      <h3>McLaren Construction, 현장 품질 점검에 '로봇 부대' 투입</h3>
+      <p>영국 McLaren Construction이 FieldAI와 협력해 4족 보행 자율 로봇을 배치, 360도 현장 촬영과 안전 준수 순찰, 품질 점검을 수행하고 있습니다.</p>
+      <a class="readlink" href="https://www.constructionenquirer.com/2026/07/06/mclaren-employs-robot-army-for-for-site-quality-checks/" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">매일신문</span><span class="date-badge">2026.07.07</span></div>
+      <h3>건설 현장 누비는 로봇…안전 지침은 '제자리'</h3>
+      <p>건설 현장에 로봇 도입이 빠르게 늘고 있지만, 관련 안전 지침·규제 정비는 이를 따라가지 못하고 있다는 지적이 제기됐습니다.</p>
+      <a class="readlink" href="https://www.imaeil.com/page/view/2026070713155520922" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 06 Kitchen robots -->
+  <div class="section" id="kitchen">
+    <div class="section-head">
+      <span class="section-tag" style="background:#db2777;">06</span>
+      <h2>키친로봇</h2>
+    </div>
+    <p class="section-desc">푸드테크 로봇이 로보컵 무대와 실제 매장 양쪽에서 존재감을 키우고 있습니다.</p>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">네이트뉴스</span><span class="date-badge">2026.07.02–06</span></div>
+      <h3>만다린로보틱스, 로보컵 2026서 AI 조리로봇 'X-웍' 시연</h3>
+      <p>로보컵 2026 인천 서비스 로봇 전시에서 만다린로보틱스가 웍 조리 동작을 재현하는 AI 조리로봇 'X-웍'과 정밀 계량 로봇 'X-레시퍼'를 공개, 실시간 조리 시연과 레시피 IP 관리 플랫폼을 선보였습니다.</p>
+      <a class="readlink" href="https://news.nate.com/view/20260702n12761" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">업계 동향</span><span class="date-badge">2026.07</span></div>
+      <h3>원키친(ONE Kitchen), 4종 조리로봇 동시 가동 매장으로 확장</h3>
+      <p>국·탕 로봇, 튀김 로봇, 볶음 로봇, 카페 로봇 등 4종의 조리로봇이 한 주방에서 함께 일하는 '원키친' 매장에 7월 중 신규 브랜드 2곳이 추가 입점할 예정입니다.</p>
+      <a class="readlink" href="https://www.robotable.me/post/%EA%B0%95%EB%82%A8%EC%97%90-%EB%A1%9C%EB%B4%87-%EC%8B%9D%EB%8B%B9%EC%9D%B4-%EC%83%88%EB%A1%9C-%EC%83%9D%EA%B2%BC%EC%96%B4%EC%9A%94" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 07 Scrubber & pipe robots -->
+  <div class="section" id="infra">
+    <div class="section-head">
+      <span class="section-tag" style="background:#0891b2;">07</span>
+      <h2>스크러버 설비 · 배관청소로봇</h2>
+    </div>
+    <p class="section-desc">이번 주에는 대형 발표보다 지자체·공기업 주도의 인프라 로봇 사업이 눈에 띕니다.</p>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">업계 동향</span><span class="date-badge">2026.07</span></div>
+      <h3>경북·광주·전북, AI 하수관 준설 로봇 공동 개발 착수</h3>
+      <p>산업통상자원부의 '메가시티 협력 첨단산업 육성지원' 공모사업에 경북·광주·전북 컨소시엄이 선정되어, 88억 원을 투입해 소형 로봇이 하수관 내부를 촬영하고 고압수로 오물을 세척하는 'AI 기반 스마트 준설 특수목적 모빌리티' 기술을 개발합니다.</p>
+      <a class="readlink" href="https://www.hankyung.com/article/2026041663731" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">헤럴드경제</span><span class="date-badge">2026.07</span></div>
+      <h3>한국수자원공사, 광역정수장에 4족 보행 점검로봇 시범 도입</h3>
+      <p>K-water가 수도시설 운영 안전성·효율성 제고를 위해 2026~2027년 화성·성남·고산·공주 등 광역정수장 4개소에 4족 보행 기반 점검로봇을 시범 도입, 2030년까지 44개 사업장으로 확대할 계획입니다.</p>
+      <a class="readlink" href="https://biz.heraldcorp.com/article/10743732" target="_blank" rel="noopener">기사 원문 보기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-top"><span class="source-badge">참고: 스크러버 장비 시장</span><span class="date-badge">배경 정보</span></div>
+      <h3>반도체 스크러버 설비, ESG 규제 강화로 재조명</h3>
+      <p>반도체·디스플레이 공정에서 발생하는 유해가스를 제거하는 스크러버 장비가 ESG 요구 강화에 따라 플라즈마 방식 등 고부가 제품 중심으로 주목받고 있습니다. 이번 주 개별 기업의 신규 계약·수주 발표는 확인되지 않았으나, SK AX의 반도체 자율형 공장 로봇 관제 확대(위 04번 참고)와 맞물려 스크러버 등 유틸리티 설비의 자동화·모니터링 고도화 움직임이 이어지고 있습니다.</p>
+    </div>
+  </div>
+
+  <footer>
+    본 뉴스레터는 로봇신문(irobotnews.com), 더로봇리포트(therobotreport.com)를 중심으로 국내외 공개 보도를 종합해 자동으로 작성되었습니다.<br>
+    모든 저작권은 각 원문 매체 및 기자에게 있으며, 본문은 요약·정리한 것으로 자세한 내용은 원문 링크를 확인하시기 바랍니다.<br>
+    <span class="footer-logos">Curated by Claude · 2026.07.15 발행</span>
+  </footer>
+
+</div>
+</body>
+</html>
