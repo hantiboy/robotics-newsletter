@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주간 로보틱스 뉴스레터 — 2026년 7월 26일</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --border:#30363d; --text:#e6edf3;
+    --muted:#8b949e; --accent:#58a6ff; --accent2:#f78166; --tag-yt:#ff4d4d;
+    --tag-x:#1d9bf0; --tag-li:#0a66c2;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--text); font-family:'Segoe UI','Apple SD Gothic Neo','Malgun Gothic',sans-serif; line-height:1.6;}
+  .wrap{max-width:900px; margin:0 auto; padding:32px 20px 80px;}
+  header{text-align:center; padding:36px 0 28px; border-bottom:1px solid var(--border); margin-bottom:36px;}
+  header h1{font-size:1.9rem; margin-bottom:8px;}
+  header .date{color:var(--muted); font-size:1rem;}
+  header .desc{color:var(--muted); font-size:.92rem; margin-top:10px;}
+  h2.section{font-size:1.35rem; margin:44px 0 6px; padding-left:12px; border-left:4px solid var(--accent);}
+  .section-sub{color:var(--muted); font-size:.88rem; margin-bottom:18px; padding-left:16px;}
+  .card{background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px; margin-bottom:22px;}
+  .card h3{font-size:1.08rem; margin-bottom:4px;}
+  .meta{color:var(--muted); font-size:.84rem; margin-bottom:10px;}
+  .tag{display:inline-block; font-size:.72rem; font-weight:700; padding:2px 9px; border-radius:20px; margin-right:6px; vertical-align:middle; color:#fff;}
+  .tag.yt{background:var(--tag-yt);} .tag.x{background:var(--tag-x);} .tag.li{background:var(--tag-li);}
+  .summary{font-size:.95rem; margin-bottom:14px; color:var(--text);}
+  .video{position:relative; width:100%; padding-bottom:56.25%; height:0; border-radius:8px; overflow:hidden; background:#000;}
+  .video iframe{position:absolute; top:0; left:0; width:100%; height:100%; border:0;}
+  .shorts{max-width:360px; margin:0 auto;}
+  .shorts .video{padding-bottom:177%;}
+  a.btn{display:inline-block; margin-top:6px; padding:8px 16px; border:1px solid var(--accent); color:var(--accent); border-radius:8px; text-decoration:none; font-size:.88rem;}
+  a.btn:hover{background:var(--accent); color:#0d1117;}
+  .note{background:#1c2128; border:1px dashed var(--border); border-radius:10px; padding:16px 18px; font-size:.88rem; color:var(--muted); margin-top:10px;}
+  .note strong{color:var(--text);}
+  ul.checklist{list-style:none; margin-top:8px;}
+  ul.checklist li{padding:3px 0;}
+  footer{margin-top:60px; text-align:center; color:var(--muted); font-size:.8rem; border-top:1px solid var(--border); padding-top:20px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>🤖 주간 로보틱스 뉴스레터</h1>
+  <div class="date">2026년 7월 20일(월) ~ 7월 26일(일)</div>
+  <div class="desc">Humanoid · VLA · Robot — 이번 주 YouTube(구독 채널 중심) / X(Twitter) / LinkedIn 영상 모음</div>
+</header>
+
+<!-- ================= YOUTUBE ================= -->
+<h2 class="section">📺 YouTube — 구독 채널 &amp; 주요 업체</h2>
+<div class="section-sub">파워베이스볼 계정 구독 채널(Astribot, Generalist, Flexion, ROBROS 등)과 주요 휴머노이드 업체 공식 채널의 최근 1주일 영상</div>
+
+<div class="card">
+  <span class="tag yt">YouTube</span>
+  <h3>Unlock more highlights from Lumo-2!</h3>
+  <div class="meta">Astribot · 3일 전 · 37:37</div>
+  <p class="summary">Astribot의 잠재(latent) World-Action Model <strong>Lumo-2</strong>의 추가 하이라이트 영상. 20개 이상의 실제 조작(manipulation) 작업을 편집 없이(uncut), 대부분 1배속 그대로 보여주며 장기 호라이즌(long-horizon) 실환경 작업 성능을 시연한다.</p>
+  <div class="video"><iframe src="https://www.youtube.com/embed/eVA-r_BS5Ls" title="Astribot Lumo-2 highlights" allowfullscreen loading="lazy"></iframe></div>
+</div>
+
+<div class="card">
+  <span class="tag yt">YouTube</span>
+  <h3>The Untold Story of Lumo-2 | Astribot R&amp;D Team Deep Dive</h3>
+  <div class="meta">Astribot · 4일 전 · 16:00</div>
+  <p class="summary">Lumo-2를 개발한 Astribot R&amp;D 팀의 비하인드 스토리. World-Action Model 설계 배경과 데이터 수집·학습 과정, 실환경 배포까지의 여정을 팀 인터뷰 형식으로 풀어낸 심층 영상.</p>
+  <div class="video"><iframe src="https://www.youtube.com/embed/xB0HiZlJfMs" title="Astribot Lumo-2 deep dive" allowfullscreen loading="lazy"></iframe></div>
+</div>
+
+<div class="card">
+  <span class="tag yt">YouTube</span>
+  <h3>Robot uses tongs to place eggs into pot of water | Generalist</h3>
+  <div class="meta">Generalist · 3일 전 · 1:10</div>
+  <p class="summary">Generalist의 임바디드 파운데이션 모델 <strong>GEN-1</strong>이 집게로 계란을 집어 물이 담긴 냄비에 넣는 섬세한 조작을 시연. "한 손이 아니라 여러 임바디먼트로부터 배우는" 크로스-임바디먼트 학습 접근을 보여주는 짧지만 인상적인 데모.</p>
+  <div class="video"><iframe src="https://www.youtube.com/embed/BYjPomX2hag" title="Generalist GEN-1 eggs demo" allowfullscreen loading="lazy"></iframe></div>
+</div>
+
+<div class="card">
+  <span class="tag yt">YouTube</span>
+  <h3>Unitree Super Athlete AS2-W</h3>
+  <div class="meta">Unitree Robotics · 2일 전 · 1:04</div>
+  <p class="summary">Unitree의 휠 기반 신형 로봇 <strong>AS2-W</strong> 공개 영상. 유연한 움직임과 콤팩트한 폼팩터에 연속 16kg 페이로드, 무부하 30km+ 주행 거리를 지원한다.</p>
+  <div class="video"><iframe src="https://www.youtube.com/embed/Xha2TJ_1C6Q" title="Unitree AS2-W" allowfullscreen loading="lazy"></iframe></div>
+</div>
+
+<div class="card">
+  <span class="tag yt">YouTube</span>
+  <h3>Real-Time Omni-Modal Interaction Driven Whole-Body Mobile Manipulation</h3>
+  <div class="meta">Unitree Robotics · 6일 전 · 2:15</div>
+  <p class="summary">Unitree의 단일 모델 <strong>UnifoLM-OminiA-0.3</strong>이 옴니모달(음성·시각) 인터랙션 이해를 바탕으로 홈케어·웰니스 등 다양한 작업을 전신(whole-body) 모바일 매니퓰레이션으로 실시간 수행하는 시연.</p>
+  <div class="video"><iframe src="https://www.youtube.com/embed/IiNbFPOUrz8" title="Unitree UnifoLM" allowfullscreen loading="lazy"></iframe></div>
+</div>
+
+<div class="card">
+  <span class="tag yt">YouTube</span>
+  <h3>Robots Doing Stuff #62 | In-Hand Reorientation &amp; Drilling</h3>
+  <div class="meta">Sanctuary AI · 2일 전 · 0:46</div>
+  <p class="summary">Sanctuary AI의 시리즈 62번째 영상. 손 안에서 물체 방향을 재정렬(in-hand reorientation)한 뒤 드릴 작업까지 이어가는 정밀한 손 조작(dexterous manipulation) 시연.</p>
+  <div class="video"><iframe src="https://www.youtube.com/embed/Ycv8N16XPPc" title="Sanctuary AI Robots Doing Stuff 62" allowfullscreen loading="lazy"></iframe></div>
+</div>
+
+<div class="card">
+  <span class="tag yt">YouTube</span>
+  <h3>Atlas' Journey to FIFA World Cup 2026™</h3>
+  <div class="meta">Boston Dynamics · 4일 전 · 1:59</div>
+  <p class="summary">FIFA 월드컵 2026 무대에서의 라이브 데뷔를 마친 휴머노이드 <strong>Atlas</strong>의 준비 과정을 담은 영상. 시니어 프로그램 매니저 인터뷰와 함께 데뷔 비하인드를 공개한다.</p>
+  <div class="video"><iframe src="https://www.youtube.com/embed/cCNkgD3qXvg" title="Atlas FIFA World Cup 2026" allowfullscreen loading="lazy"></iframe></div>
+</div>
+
+<div class="card">
+  <span class="tag yt">YouTube</span>
+  <h3>Spot at Mariana Minerals | Boston Dynamics</h3>
+  <div class="meta">Boston Dynamics · 4일 전 · 2:11</div>
+  <p class="summary">'소프트웨어 우선' 광산 기업 Mariana Minerals가 <strong>Spot</strong>을 현장에 투입해 필드 데이터를 수집·활용, 광산 운영을 최적화하는 산업 적용 사례.</p>
+  <div class="video"><iframe src="https://www.youtube.com/embed/KywMP9_SyRg" title="Spot at Mariana Minerals" allowfullscreen loading="lazy"></iframe></div>
+</div>
+
+<div class="card">
+  <span class="tag yt">YouTube</span>
+  <h3>Going the Extra Mile with Spot | Boston Dynamics</h3>
+  <div class="meta">Boston Dynamics · 4일 전 · 0:56</div>
+  <p class="summary">Spot의 산업 현장 활용 범위를 한층 넓혀가는 모습을 담은 짧은 영상. 같은 주에 공개된 Spot 시리즈 중 하나.</p>
+  <div class="video"><iframe src="https://www.youtube.com/embed/EI1zFxLVkrs" title="Going the Extra Mile with Spot" allowfullscreen loading="lazy"></iframe></div>
+</div>
+
+<div class="card">
+  <span class="tag yt">YouTube</span>
+  <h3>Niantic Spatial, Flexion, and NVIDIA: Closing the Sim2Real Gap for Humanoids</h3>
+  <div class="meta">Flexion · 5일 전 · 1:22</div>
+  <p class="summary">Flexion이 Niantic Spatial, NVIDIA와 협력해 휴머노이드의 <strong>Sim2Real 갭</strong>을 줄이는 접근을 소개. 공간 인식 데이터와 시뮬레이션을 결합해 실환경 전이 성능을 높이는 것이 핵심.</p>
+  <div class="video"><iframe src="https://www.youtube.com/embed/qZR0RMP2_5w" title="Flexion NVIDIA Niantic Sim2Real" allowfullscreen loading="lazy"></iframe></div>
+</div>
+
+<div class="card">
+  <span class="tag yt">YouTube</span>
+  <h3>IGRIS-C's first day out in Seongsu 🤖 (Shorts)</h3>
+  <div class="meta">ROBROS · 이번 주 · Shorts</div>
+  <p class="summary">한국 로봇 스타트업 ROBROS의 휴머노이드 <strong>IGRIS-C</strong>가 서울 성수동 거리로 첫 외출. 실외 보행과 사람들과의 자연스러운 인터랙션을 담았다.</p>
+  <div class="shorts"><div class="video"><iframe src="https://www.youtube.com/embed/2ZBzoFN-38A" title="ROBROS IGRIS-C Seongsu" allowfullscreen loading="lazy"></iframe></div></div>
+</div>
+
+<div class="card">
+  <span class="tag yt">YouTube</span>
+  <h3>앤트로픽의 피지컬 인텔리전스 인수설, YC의 AI 디자인 (라이브)</h3>
+  <div class="meta">sudoremove · 7/26 라이브 스트림</div>
+  <p class="summary">이번 주 AI 트위터를 뜨겁게 달군 <strong>Anthropic ↔ Physical Intelligence 인수설</strong>을 다룬 라이브. 참고: TechCrunch 보도에 따르면 양사는 올봄 인수 논의를 가졌으나, PI CEO Karol Hausman은 사내 메시지로 인수 보도를 부인했다(루머 단계).</p>
+  <div class="video"><iframe src="https://www.youtube.com/embed/vjjuDMgToAs" title="sudoremove live" allowfullscreen loading="lazy"></iframe></div>
+</div>
+
+<div class="note">
+  <strong>주요 업체 계정 체크 결과 (최근 1주일 신규 영상 없음)</strong>
+  <ul class="checklist">
+    <li>❌ Tesla / Tesla Optimus — 최신 게시물 6/24 (Optimus 신규 영상 없음)</li>
+    <li>❌ Figure AI — 최신 영상 "Figure 4 years" (2주 전)</li>
+    <li>❌ 1X — 최신 영상 "NEO's Hands" (2주 전)</li>
+    <li>❌ Apptronik — 최신 영상 "Robot Park / Apollo 2" (3주 전)</li>
+    <li>❌ RLWRLD · MindOn · ROBOTERA · Agility Robotics — 1주일 내 신규 없음</li>
+    <li>✅ Boston Dynamics · Sanctuary AI · Unitree · Astribot · Generalist · Flexion · ROBROS — 위에 수록</li>
+  </ul>
+</div>
+
+<!-- ================= X / TWITTER ================= -->
+<h2 class="section">🐦 X (Twitter)</h2>
+<div class="section-sub">주요 업체 공식 계정 및 이번 주 화제의 로봇 영상 포스트</div>
+
+<div class="card">
+  <span class="tag x">X</span>
+  <h3>Unitree — Super Athlete AS2-W 공개</h3>
+  <div class="meta">@UnitreeRobotics · 7/24 · 영상 포스트</div>
+  <p class="summary">"유연한 움직임, 콤팩트하지만 특별하다." 연속 16kg 페이로드와 30km+ 주행 거리를 갖춘 AS2-W 발표 트윗. (위 YouTube 영상과 동일 내용)</p>
+  <a class="btn" href="https://x.com/UnitreeRobotics/status/2080549171661295907" target="_blank">포스트 보기 →</a>
+</div>
+
+<div class="card">
+  <span class="tag x">X</span>
+  <h3>Unitree — UnifoLM-OminiA-0.3 전신 모바일 매니퓰레이션</h3>
+  <div class="meta">@UnitreeRobotics · 7/20 · 영상 포스트</div>
+  <p class="summary">단일 모델로 다양한 홈케어·웰니스 작업을 처리하는 옴니모달 인터랙션 기반 whole-body mobile manipulation 시연.</p>
+  <a class="btn" href="https://x.com/UnitreeRobotics/status/2079113095188984161" target="_blank">포스트 보기 →</a>
+</div>
+
+<div class="card">
+  <span class="tag x">X</span>
+  <h3>Boston Dynamics — "휴머노이드의 목적은 인간이 되는 것이 아니다"</h3>
+  <div class="meta">@BostonDynamics · 7/21 · 영상 포스트</div>
+  <p class="summary">"The point of a humanoid is not to be a human. It is to be more than one." — 임시 CEO Amanda McMaster의 휴머노이드 비전 인터뷰 클립.</p>
+  <a class="btn" href="https://x.com/BostonDynamics/status/2079549974207996222" target="_blank">포스트 보기 →</a>
+</div>
+
+<div class="card">
+  <span class="tag x">X</span>
+  <h3>Boston Dynamics — Spot, Mariana Minerals 광산 투입</h3>
+  <div class="meta">@BostonDynamics · 7/22 · 영상 포스트</div>
+  <p class="summary">Spot이 수집한 현장 데이터로 광산 운영을 최적화하는 Mariana Minerals 사례 소개 트윗.</p>
+  <a class="btn" href="https://x.com/BostonDynamics/status/2079934867127648391" target="_blank">포스트 보기 →</a>
+</div>
+
+<div class="card">
+  <span class="tag x">X</span>
+  <h3>OpenBMB — MiniCPM-Robot 오픈소스 공개</h3>
+  <div class="meta">@OpenBMB · 이번 주 · 영상 포스트</div>
+  <p class="summary">"MiniCPM이 물리 세계로 들어간다." OpenBMB가 로봇이 이해하고, 기억하고, 행동할 수 있게 하는 첫 임바디드 AI 모델 <strong>MiniCPM-Robot</strong>을 오픈소스로 공개.</p>
+  <a class="btn" href="https://x.com/OpenBMB/status/2078839529591759025" target="_blank">포스트 보기 →</a>
+</div>
+
+<div class="card">
+  <span class="tag x">X</span>
+  <h3>중국 휴머노이드 붐의 새 산업 — 로봇 의류 &amp; 소프트 스킨</h3>
+  <div class="meta">@ErenChenAI · 7/22 · 영상 포스트</div>
+  <p class="summary">중국 휴머노이드 붐과 함께 성장 중인 '로봇 의류·유연 외피' 전문 산업 소개. KNITREAL의 <strong>RoboSkin</strong>은 심리스 니팅과 다방향 신축성으로 로봇 외피를 제작한다.</p>
+  <a class="btn" href="https://x.com/ErenChenAI/status/2079636507292479579" target="_blank">포스트 보기 →</a>
+</div>
+
+<div class="card">
+  <span class="tag x">X</span>
+  <h3>미국 뉴욕 학군, 교실에 휴머노이드 도입</h3>
+  <div class="meta">@DailyLoud · 7/21 · 영상 포스트 · 1.1K 좋아요</div>
+  <p class="summary">뉴욕의 한 학군이 미국 최초로 교실에 휴머노이드 로봇을 도입하는 사례를 담은 화제의 영상.</p>
+  <a class="btn" href="https://x.com/DailyLoud/status/2079243635523011069" target="_blank">포스트 보기 →</a>
+</div>
+
+<!-- ================= LINKEDIN ================= -->
+<h2 class="section">💼 LinkedIn</h2>
+<div class="section-sub">최근 1주일 휴머노이드·VLA 관련 주요 포스트 (LinkedIn은 게시물 직접 링크 대신 작성자 페이지로 연결)</div>
+
+<div class="card">
+  <span class="tag li">LinkedIn</span>
+  <h3>AheadForm — WAIC 2026에서 초실사 휴머노이드 공개</h3>
+  <div class="meta">CTO Robotics Media · 5시간 전 · 영상 포스트</div>
+  <p class="summary">중국 AheadForm이 상하이 WAIC 2026에서 눈맞춤, 눈 깜빡임, 대화, 발화-표정 동기화까지 가능한 초실사(ultra-lifelike) 휴머노이드를 공개. "휴머노이드 경쟁은 이제 보행·작업을 넘어 '인간적 존재감'의 영역으로" 넘어가고 있다는 평.</p>
+  <a class="btn" href="https://www.linkedin.com/company/ctorobotics/posts/" target="_blank">포스트 페이지 →</a>
+</div>
+
+<div class="card">
+  <span class="tag li">LinkedIn</span>
+  <h3>Xiaomi — 4.7B 파라미터 오픈소스 VLA 'Xiaomi-Robotics-0'</h3>
+  <div class="meta">Balázs Németh · 1주 전 · 영상 포함 포스트</div>
+  <p class="summary">샤오미가 4.7B 파라미터 Vision-Language-Action 모델 <strong>Xiaomi-Robotics-0</strong>를 오픈소스로 공개. 자사 공장에서 로봇들을 '인턴'이라 부르며 실시간 고성능 실행에 최적화된 시연 영상을 함께 선보였다.</p>
+  <a class="btn" href="https://www.linkedin.com/search/results/content/?keywords=Xiaomi-Robotics-0" target="_blank">포스트 검색 →</a>
+</div>
+
+<div class="card">
+  <span class="tag li">LinkedIn</span>
+  <h3>Fraunhofer IPA — 휴머노이드 성능 벤치마킹 프레임워크</h3>
+  <div class="meta">Aaron Prather (A3 Director) · 2일 전</div>
+  <p class="summary">독일 Fraunhofer IPA가 안전, 사이버보안, 클린룸 적합성, 에너지 효율 등 6개 카테고리로 휴머노이드를 평가하는 업계 최초 수준의 종합 벤치마킹 프레임워크를 발표. 미국 NIST의 유사한 노력과 함께 '마케팅 주장'이 아닌 객관적 데이터로 휴머노이드를 비교하는 표준화 흐름을 예고.</p>
+  <a class="btn" href="https://www.linkedin.com/in/aaronprather/recent-activity/all/" target="_blank">포스트 페이지 →</a>
+</div>
+
+<div class="card">
+  <span class="tag li">LinkedIn</span>
+  <h3>Telekinesis — Agentic OS에 VLA &amp; World Model 통합 예고</h3>
+  <div class="meta">Suman Pal (Telekinesis CEO) · 5일 전</div>
+  <p class="summary">Physical AI를 위한 Agentic OS에 ACT, Pi0.5, VLA-JEPA 등 VLA/World Model 스택을 통합할 계획을 공개. Hugging Face LeRobot과 유사한 인터페이스를 유지해 오픈소스 데이터셋 학습을 지원하는 것이 목표.</p>
+  <a class="btn" href="https://www.linkedin.com/search/results/content/?keywords=Telekinesis%20Agentic%20OS%20VLA" target="_blank">포스트 검색 →</a>
+</div>
+
+<footer>
+  본 뉴스레터는 자동 수집·요약으로 작성되었습니다 · 2026-07-26 (KST) 생성<br>
+  YouTube 구독 피드 + Tesla·Boston Dynamics·Figure·1X·Apptronik·Sanctuary AI 등 공식 계정 확인 완료
+</footer>
+
+</div>
+</body>
+</html>
