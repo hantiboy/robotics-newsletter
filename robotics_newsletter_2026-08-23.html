@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robotics Weekly · 2026.08.16 ~ 2026.08.23</title>
+<style>
+:root{--bg:#0b0e14;--card:#141924;--line:#242c3d;--tx:#e6eaf2;--mut:#93a0b8;--acc:#5eead4;--acc2:#818cf8;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI','Malgun Gothic',sans-serif;line-height:1.7;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px 80px;}
+header{padding:56px 0 28px;border-bottom:1px solid var(--line);margin-bottom:36px;}
+.kicker{color:var(--acc);font-weight:700;letter-spacing:.14em;font-size:12px;text-transform:uppercase;}
+h1{font-size:40px;line-height:1.2;margin:12px 0 8px;}
+.period{color:var(--mut);font-size:15px;}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 16px;font-size:13px;}
+.stat b{color:var(--acc);font-size:20px;display:block;line-height:1.3;}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0 0;}
+nav a{font-size:13px;color:var(--mut);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:5px 13px;}
+nav a:hover{color:var(--acc);border-color:var(--acc);}
+.exec{background:linear-gradient(160deg,#141b2c,#111520);border:1px solid var(--line);border-left:4px solid var(--acc);
+border-radius:14px;padding:26px 30px;margin-bottom:48px;}
+.exec h2{margin:0 0 6px;font-size:24px;}
+.exec ol{padding-left:20px;} .exec li{margin-bottom:14px;}
+.hl{color:var(--acc);font-weight:700;}
+.tldr{background:rgba(94,234,212,.08);border-radius:10px;padding:14px 18px;margin:22px 0 0;font-size:15px;}
+section{margin-bottom:56px;}
+h2{font-size:26px;margin:0 0 4px;}
+.sub{color:var(--mut);font-size:14px;margin:0 0 22px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:22px;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;}
+.embed{position:relative;padding-top:56.25%;background:#000;}
+.embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.cbody{padding:16px 18px 20px;display:flex;flex-direction:column;flex:1;}
+.meta{font-size:12px;color:var(--mut);margin-bottom:8px;}
+.meta .ch{color:var(--acc2);font-weight:700;}
+.dot{margin:0 6px;}
+.card h3{font-size:16px;margin:0 0 10px;line-height:1.45;}
+.card h3 a{color:var(--tx);text-decoration:none;} .card h3 a:hover{color:var(--acc);}
+.card p{font-size:14px;color:#c4cdde;margin:0 0 14px;flex:1;}
+.card b{color:#fff;}
+.watch{font-size:13px;color:var(--acc);text-decoration:none;font-weight:600;}
+table{width:100%;border-collapse:collapse;font-size:13.5px;}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+th{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.06em;}
+td a{color:var(--tx);text-decoration:none;} td a:hover{color:var(--acc);}
+td.d{color:var(--mut);white-space:nowrap;} td.c{color:var(--acc2);white-space:nowrap;}
+td.v{color:var(--mut);text-align:right;white-space:nowrap;}
+.webnews li{margin-bottom:12px;font-size:14.5px;}
+.webnews a{color:var(--acc);}
+footer{border-top:1px solid var(--line);padding-top:22px;color:var(--mut);font-size:12.5px;}
+@media(max-width:640px){h1{font-size:28px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">Humanoid · VLA · Robotics Weekly</div>
+  <h1>로보틱스 위클리 뉴스레터</h1>
+  <div class="period">2026.08.16 ~ 2026.08.23 · 구독 채널 기반 큐레이션</div>
+  <div class="stats">
+    <div class="stat"><b>107</b>신규 영상</div>
+    <div class="stat"><b>48</b>업로드 채널</div>
+    <div class="stat"><b>370</b>모니터링 채널</div>
+    <div class="stat"><b>43</b>수록 영상</div>
+  </div>
+  <nav><a href="#top">🏆 Top Highlights</a><a href="#humanoid">🤖 Humanoid & Embodied AI</a><a href="#vla">🧠 VLA · Foundation Models · Physical AI</a><a href="#dexterity">✋ Dexterous Hands · Teleoperation · Hardware</a><a href="#industry">🏭 Industrial · Service · Logistics</a><a href="#research">🎓 Research & Academia</a><a href="#all">📋 전체 목록</a><a href="#web">📰 웹·SNS</a></nav>
+</header>
+
+<div class="exec">
+  <h2>📌 Executive Summary</h2>
+  
+<p><b>이번 주(8/16~8/23) 로보틱스 씬은 베이징 <span class="hl">World Robot Conference 2026</span>(8/19~23)과
+제2회 <span class="hl">World Humanoid Robot Games</span>가 사실상 모든 뉴스를 빨아들였습니다.</b>
+구독 채널 370개 중 <b>48개 채널에서 107편</b>의 신규 영상이 올라왔고, 이 가운데 휴머노이드·VLA 관련이 절반을 넘었습니다.</p>
+
+<ol>
+<li><b>하드웨어 성능 경쟁이 '인간 기록'을 넘어섰습니다.</b> Unitree의 신형 <b>Superman</b>이 제자리 높이뛰기 2m,
+주행 12.66 m/s로 인간 세계기록 상회를 주장하며 350만 뷰를 기록했고, Tien Kung Ultra의 수직 점프,
+Galbot의 <b>세계 최초 자율 휴머노이드 테니스 경기</b>가 뒤를 이었습니다. 액추에이터 출력밀도와 전신 동적 제어가
+더 이상 병목이 아니라는 신호입니다.</li>
+
+<li><b>모델 축의 화두는 '원샷 학습'과 'World Action Model'입니다.</b> Generalist의 <b>GEN-1.5</b>는
+사람 시연 한 번으로 수 초 내에 새 태스크를 습득하는 in-context 학습을 시연했고, DYNA Robotics의 <b>DYNA-2</b>는
+로봇 데이터 없이 <b>1인칭 사람 영상 100만 시간(인간 시간 170년)</b>만으로 프리트레이닝한 스케일링 법칙이 로봇으로
+전이됨을 보였습니다. NVIDIA 역시 VLA 후속으로 WAM을 공식화했습니다. <b>'데이터 수집 → 재학습' 사이클을
+건너뛰는 것</b>이 올해 하반기 경쟁의 핵심 축이 됐습니다.</li>
+
+<li><b>평가와 데이터 인프라가 별도 산업이 되고 있습니다.</b> RLWRLD는 실제 공장 작업을 <b>5,000개 이상 단위 동작</b>으로
+분해해 덱스터리티 벤치마크를 만들었고, Orbbec은 <b>로봇 없이</b> 사람이 데이터를 수집하는 EGO/UMI 하드웨어를,
+AgileX는 마스터 암 1대로 <b>6대를 동시 원격제어</b>하는 1:N 텔레오퍼레이션을 공개했습니다.</li>
+
+<li><b>'데모'에서 '운용'으로의 전환이 가시화됐습니다.</b> LimX <b>TRON 2</b>는 실제 도시 지하 공동구에서 매핑→점검→
+이상탐지→자율충전까지 무인 폐루프를 돌렸고, UBTECH Walker C1은 실근무에 투입됐습니다. 반대로 Sanctuary AI는
+<b>'마지막 몇 %'</b>가 진짜 장벽임을, Automate Show는 <b>가정이 아니라 산업이 먼저</b>라는 시장 시퀀싱 논리를 강조했습니다.</li>
+
+<li><b>국내·일본 진영도 활발했습니다.</b> RLWRLD(벤치마크), 트위니(물류 도입 효과), 클로봇(KHF 2026),
+HD현대로보틱스(롱샤프트 자동화)가 업로드했고, Tokyo Robotics는 <b>Torobo2</b>로 식탁 정리·빨래 개기·연속 태스크 전환
+3편을 한꺼번에 공개하며 가정형 자율 조작에서 꾸준한 진척을 보였습니다.</li>
+</ol>
+
+<p class="tldr"><b>한 줄 요약 —</b> 하드웨어는 인간 기록을 넘었고, 모델은 원샷 학습으로 데이터 병목을 우회하기 시작했으며,
+남은 승부처는 <b>신뢰성과 시장 시퀀싱</b>입니다.</p>
+
+</div>
+
+<section id="top"><h2>🏆 Top Highlights</h2><p class="sub">이번 주 가장 주목할 5편</p><div class="grid">
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/O7OkiZfIlS4" title="Unitree New Robot Preview: &quot;Superman&quot; Breaking the Limits of Humanity" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Unitree Robotics</span><span class="dot">·</span><span>2026-08-17</span><span class="dot">·</span><span>조회 3,575,444</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=O7OkiZfIlS4" target="_blank" rel="noopener">Unitree New Robot Preview: &quot;Superman&quot; Breaking the Limits of Humanity</a></h3>
+          <p>유니트리가 개발 3개월여 만에 공개한 신형 휴머노이드 '슈퍼맨' 프리뷰. 제자리 높이뛰기 2m, 최고 주행 속도 12.66 m/s(다리 길이 0.85m 기준)로 <b>인간의 제자리 높이뛰기·달리기 세계 기록을 모두 상회</b>한다고 주장한다. 액추에이터 출력밀도와 전신 제어(WBC) 수준을 과시하는 벤치마크성 공개로, 이번 주 조회수 350만 회를 넘기며 압도적 화제를 모았다.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=O7OkiZfIlS4" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/1nopOx83KTs" title="Meet GALBOT ET1." loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Galbot</span><span class="dot">·</span><span>2026-08-20</span><span class="dot">·</span><span>조회 3,245,019</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=1nopOx83KTs" target="_blank" rel="noopener">Meet GALBOT ET1.</a></h3>
+          <p>갤봇이 차세대 플랫폼 <b>ET1</b>을 공개했다. 기존 휠베이스 G1 계열에서 확장된 신규 폼팩터로, 리테일·서비스 현장 투입을 겨냥한 제품 티저다. 공개 3일 만에 320만 뷰를 기록하며 중국 휴머노이드 진영의 마케팅 화력을 다시 확인시켰다.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=1nopOx83KTs" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/bcVNBn5R_rY" title="From AlphaGo to AstraTennis: The World&#x27;s First Autonomous Humanoid Robot Tennis Match | GALBOT" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Galbot</span><span class="dot">·</span><span>2026-08-22</span><span class="dot">·</span><span>조회 613,527</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=bcVNBn5R_rY" target="_blank" rel="noopener">From AlphaGo to AstraTennis: The World&#x27;s First Autonomous Humanoid Robot Tennis Match | GALBOT</a></h3>
+          <p>제2회 World Humanoid Robot Games에서 진행된 <b>세계 최초 자율 휴머노이드 테니스 경기</b>. 2016년 알파고의 이세돌 9단 격파를 '디지털 지능의 순간'으로, 이번 AstraTennis를 '물리 지능(Physical AI)의 순간'으로 대비시키는 서사를 내세웠다. 고속 공 추적·전신 동적 밸런싱·라켓 임팩트 제어를 실시간으로 묶어낸 점이 기술적 관전 포인트.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=bcVNBn5R_rY" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/1cllCVK-9lo" title="Introducing GEN-1.5, a one-shot learner" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Generalist</span><span class="dot">·</span><span>2026-08-19</span><span class="dot">·</span><span>조회 113,944</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=1cllCVK-9lo" target="_blank" rel="noopener">Introducing GEN-1.5, a one-shot learner</a></h3>
+          <p>Generalist AI의 로봇 파운데이션 모델 <b>GEN-1.5</b> 공개. 핵심 주장은 <b>원샷/퓨샷 학습</b> — 사람이 한 번 시연하면 수 초 내에 새로운 조작 태스크를 습득한다. 태스크별 파인튜닝 없이 in-context learning으로 신규 스킬을 흡수한다는 점에서, 기존 VLA의 '데이터 수집 → 재학습' 사이클을 건너뛰는 방향성을 제시한다. 이번 주 VLA 진영에서 가장 중요한 발표.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=1cllCVK-9lo" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/qfRnieKeQzM" title="TRON 2 in Action: Autonomous Utility Tunnel Inspection" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">LimX Dynamics</span><span class="dot">·</span><span>2026-08-17</span><span class="dot">·</span><span>조회 186,017</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=qfRnieKeQzM" target="_blank" rel="noopener">TRON 2 in Action: Autonomous Utility Tunnel Inspection</a></h3>
+          <p>LimX Dynamics의 이족 로봇 <b>TRON 2</b>가 실제 도시 지하 공동구에서 <b>완전 자율 점검 루프</b>를 수행한다. 매핑 → 내비게이션 → 다층 점검 → 이상 탐지 및 대응 → 자율 도킹/충전까지 사람 개입 없이 닫힌 루프로 돌린 사례로, 휴머노이드/이족 로봇의 '데모'가 '운용'으로 넘어가는 대표적 레퍼런스.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=qfRnieKeQzM" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+</div></section>
+<section id="humanoid"><h2>🤖 Humanoid & Embodied AI</h2><p class="sub">WRC 2026을 중심으로 한 휴머노이드 진영 동향</p><div class="grid">
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/T0FlAzLcHjw" title="Meet Eve 👋" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Wandercraft</span><span class="dot">·</span><span>2026-08-18</span><span class="dot">·</span><span>조회 1,342</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=T0FlAzLcHjw" target="_blank" rel="noopener">Meet Eve 👋</a></h3>
+          <p>Wandercraft가 개인용 자가균형 외골격 <b>Eve</b>를 공개. 척수손상(SCI) 등 중증 보행장애인을 1차 타깃으로, 목발 없이 기립·보행·일상활동이 가능하도록 설계됐다. 휴머노이드 하체 제어 기술이 웨어러블 의료기기로 전이된 사례.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=T0FlAzLcHjw" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/_zGIBM5iExA" title="Asimov 1 is leaving the lab" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Asimov</span><span class="dot">·</span><span>2026-08-21</span><span class="dot">·</span><span>조회 1,835</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=_zGIBM5iExA" target="_blank" rel="noopener">Asimov 1 is leaving the lab</a></h3>
+          <p>Menlo Research의 오픈소스 휴머노이드 <b>Asimov 1</b>이 랩을 벗어나 실환경 테스트에 들어갔다. '가장 개발자 친화적이고 커스터마이즈 가능한 휴머노이드'를 표방하며 GitHub에 설계를 공개 중(menloresearch/asimov-1). 같은 주에 토르소 내구성 테스트(08-19), Day 329 개발 로그(08-20)도 함께 업로드.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=_zGIBM5iExA" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/DHAdaN9cqWU" title="WRC 2026, we&#x27;re HERE! 🚀" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">UBTECH Robotics</span><span class="dot">·</span><span>2026-08-20</span><span class="dot">·</span><span>조회 3,854</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=DHAdaN9cqWU" target="_blank" rel="noopener">WRC 2026, we&#x27;re HERE! 🚀</a></h3>
+          <p>UBTECH의 WRC 2026(8/19~23, 베이징) 부스 현장. 같은 주 <b>Walker C1</b> 실근무 투입 영상(08-22)과 신규 <b>UWORLD U1</b> 티저(08-23)를 연달아 공개하며, 전시용 데모가 아닌 '현장 근무 로봇' 포지셔닝을 강조했다.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=DHAdaN9cqWU" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/OmACLwMOkTk" title="Meet LimX Dynamics at WRC 2026" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">LimX Dynamics</span><span class="dot">·</span><span>2026-08-18</span><span class="dot">·</span><span>조회 777</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=OmACLwMOkTk" target="_blank" rel="noopener">Meet LimX Dynamics at WRC 2026</a></h3>
+          <p>LimX Dynamics의 WRC 2026 부스 안내 및 Day 1 현장 영상(08-19). 함께 공개된 <b>TRON Camp 2026 다큐 EP.02</b>(08-20)는 개발자 캠프 참가팀이 0에서 우승까지 가는 과정을 담아, 이족 로봇 개발 생태계 확장 전략을 보여준다.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=OmACLwMOkTk" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/D4IN7Ku6X1I" title="Tien Kung Ultra Launches Straight Up and FLIES!" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">XRoboHub</span><span class="dot">·</span><span>2026-08-22</span><span class="dot">·</span><span>조회 7,743</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=D4IN7Ku6X1I" target="_blank" rel="noopener">Tien Kung Ultra Launches Straight Up and FLIES!</a></h3>
+          <p>베이징 인간형로봇혁신센터의 <b>Tien Kung Ultra</b>가 수직 점프 후 체공하는 장면. 같은 채널의 '로봇 올림픽 입장식' 영상(08-22)과 함께, WRC/휴머노이드 게임 현장의 폭발적 분위기를 전한다.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=D4IN7Ku6X1I" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/qx3Ss3n7idA" title="Introducing PUDU MP2000: AI-Native Pallet Handling Robot" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Pudu Robotics</span><span class="dot">·</span><span>2026-08-18</span><span class="dot">·</span><span>조회 3,115</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=qx3Ss3n7idA" target="_blank" rel="noopener">Introducing PUDU MP2000: AI-Native Pallet Handling Robot</a></h3>
+          <p>푸두로보틱스의 <b>MP2000</b> — 최대 2,000kg 팔레트를 취급하는 AI 네이티브 물류 로봇. 기존 물류 환경 개조 없이 즉시 투입 가능한 'out of the box' 배치를 강조. 서비스 로봇 기업의 헤비 물류 진출 신호.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=qx3Ss3n7idA" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/qrVwRFoGYHY" title="Lumos MOS 2 Is Coming | Heavy-Duty AI Worker for Real-World Industry" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Lumos Robotics</span><span class="dot">·</span><span>2026-08-19</span><span class="dot">·</span><span>조회 110</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=qrVwRFoGYHY" target="_blank" rel="noopener">Lumos MOS 2 Is Coming | Heavy-Duty AI Worker for Real-World Industry</a></h3>
+          <p>산업 현장용 헤비듀티 'AI 워커' <b>MOS 2</b> 예고편. 힘·이동성·지능을 결합해 중작업을 대체한다는 컨셉으로, 휴머노이드가 아닌 산업 특화 폼팩터를 택한 점이 특징.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=qrVwRFoGYHY" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/-8DuygU_4nQ" title="Curious what separates a great robotics demo from a production-ready system?" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Sanctuary AI</span><span class="dot">·</span><span>2026-08-19</span><span class="dot">·</span><span>조회 526</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=-8DuygU_4nQ" target="_blank" rel="noopener">Curious what separates a great robotics demo from a production-ready system?</a></h3>
+          <p>Sanctuary AI 공동창업자 Olivia Norton(CEOO)이 <b>'마지막 몇 %'</b> 문제를 설명한다. 화려한 데모와 프로덕션 배치 사이의 간극 — 신뢰성·반복성·엣지케이스 처리 — 이 Physical AI 상용화의 진짜 장벽이라는 메시지.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=-8DuygU_4nQ" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/KQmd4RWuxaA" title="The Commercial Viability of Humanoids — Why the Home Is Last, Not First" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Automate Show</span><span class="dot">·</span><span>2026-08-21</span><span class="dot">·</span><span>조회 157</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=KQmd4RWuxaA" target="_blank" rel="noopener">The Commercial Viability of Humanoids — Why the Home Is Last, Not First</a></h3>
+          <p>휴머노이드 상용화는 '스펙터클'이 아니라 <b>의도적인 시장 시퀀싱</b>에 달려 있다는 분석. 대중의 상상과 달리 가정은 가장 마지막 시장이며, 구조화된 산업 환경부터 순차적으로 공략해야 한다는 경제성·기술적 근거를 제시한다.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=KQmd4RWuxaA" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+</div></section>
+<section id="vla"><h2>🧠 VLA · Foundation Models · Physical AI</h2><p class="sub">이번 주 모델·데이터·시뮬레이션 스택</p><div class="grid">
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/yisYLno3VJ4" title="達明機器人攜手 NVIDIA！六所指標大學、國研院齊聚 TM Academy，聚焦人形機器人 VLA" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Techman Robot</span><span class="dot">·</span><span>2026-08-23</span><span class="dot">·</span><span>조회 61</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=yisYLno3VJ4" target="_blank" rel="noopener">達明機器人攜手 NVIDIA！六所指標大學、國研院齊聚 TM Academy，聚焦人形機器人 VLA</a></h3>
+          <p>대만 Techman Robot이 <b>NVIDIA와 협력</b>해 6개 주요 대학·국가연구원과 함께 'TM Academy'를 출범, <b>휴머노이드 VLA</b>를 공동 연구 주제로 삼았다. 협동로봇 기업이 VLA 기반 휴머노이드로 확장하는 흐름.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=yisYLno3VJ4" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/cG_eCvQoZOw" title="170여 년의 사람 데이터를 World Action Model로 녹여낸 Dyna-2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">sudoremove</span><span class="dot">·</span><span>2026-08-19</span><span class="dot">·</span><span>조회 2,102</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=cG_eCvQoZOw" target="_blank" rel="noopener">170여 년의 사람 데이터를 World Action Model로 녹여낸 Dyna-2</a></h3>
+          <p>DYNA Robotics의 <b>World Action Model, DYNA-2</b> 테크니컬 리포트 해설. 100만 시간(인간 시간 170년) 분량의 <b>1인칭 사람 영상만으로 프리트레이닝</b>하고, 그 스케일링 법칙이 한 번도 본 적 없는 로봇 데이터로 그대로 전이된다는 점이 핵심. Mixture of Transformers 구조를 사용. VLA를 넘어 WAM(World Action Model)으로 가는 흐름을 잘 정리한 국내 채널 콘텐츠.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=cG_eCvQoZOw" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/QCpelD3TqWk" title="Build a Household Robot Workflow With NVIDIA Isaac and Cosmos" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">NVIDIA Omniverse</span><span class="dot">·</span><span>2026-08-20</span><span class="dot">·</span><span>조회 2,310</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=QCpelD3TqWk" target="_blank" rel="noopener">Build a Household Robot Workflow With NVIDIA Isaac and Cosmos</a></h3>
+          <p>실제 가정용 로봇 하나를 <b>NVIDIA Isaac + Cosmos</b> 스택으로 구축하는 실전 워크플로. 합성 데이터 생성 → 시뮬레이션 학습 → 실기 이전(sim2real)의 전 과정을 10Things 창업팀이 시연한다.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=QCpelD3TqWk" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/oJF_6HgA46E" title="Cosmos 3 Post-Training in Action With Aigen and Linker Vision | Cosmos Labs" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">NVIDIA Developer</span><span class="dot">·</span><span>2026-08-20</span><span class="dot">·</span><span>조회 1,637</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=oJF_6HgA46E" target="_blank" rel="noopener">Cosmos 3 Post-Training in Action With Aigen and Linker Vision | Cosmos Labs</a></h3>
+          <p><b>Cosmos 3</b> 월드 파운데이션 모델의 포스트트레이닝 실사례. Aigen(농업 로봇)과 Linker Vision(도시 비전)이 도메인 데이터로 월드모델을 튜닝하는 과정을 다룬다.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=oJF_6HgA46E" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/w4uhkGmV5d0" title="What is an omni-model?" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">NVIDIA Developer</span><span class="dot">·</span><span>2026-08-20</span><span class="dot">·</span><span>조회 1,414</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=w4uhkGmV5d0" target="_blank" rel="noopener">What is an omni-model?</a></h3>
+          <p>텍스트·이미지·비디오·오디오·액션을 하나의 백본에서 다루는 <b>옴니모델</b> 개념 정리. VLA/WAM 논의의 상위 프레임으로 참고할 만한 짧은 해설.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=w4uhkGmV5d0" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/OrX_h1Ay7c0" title="Build Agent-Ready Physical AI Workflows with NVIDIA Omniverse Libraries" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">NVIDIA Omniverse</span><span class="dot">·</span><span>2026-08-18</span><span class="dot">·</span><span>조회 2,056</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=OrX_h1Ay7c0" target="_blank" rel="noopener">Build Agent-Ready Physical AI Workflows with NVIDIA Omniverse Libraries</a></h3>
+          <p>Omniverse 라이브러리를 이용해 <b>에이전트가 직접 호출 가능한</b> Physical AI 파이프라인을 구성하는 방법. 로보틱스 개발에 LLM 에이전트를 붙이려는 팀에 유용.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=OrX_h1Ay7c0" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/Dt2AqsrKicY" title="Orbbec Robot-Free Data Collection Hardware Platform for Physical AI" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Orbbec</span><span class="dot">·</span><span>2026-08-19</span><span class="dot">·</span><span>조회 37</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=Dt2AqsrKicY" target="_blank" rel="noopener">Orbbec Robot-Free Data Collection Hardware Platform for Physical AI</a></h3>
+          <p>로봇 없이 <b>사람이 직접 데이터를 모으는</b> 하드웨어 플랫폼. 1인칭 시각 수집용 EGO와 핸드헬드 조작 수집용 UMI를 제공한다. VLA 학습 데이터 병목을 하드웨어로 푸는 접근.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=Dt2AqsrKicY" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/UeTtRs_XdI8" title="We Built a Dexterity Benchmark From Real Factory Work | Rollout Ep.02" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">RLWRLD</span><span class="dot">·</span><span>2026-08-18</span><span class="dot">·</span><span>조회 705</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=UeTtRs_XdI8" target="_blank" rel="noopener">We Built a Dexterity Benchmark From Real Factory Work | Rollout Ep.02</a></h3>
+          <p>RLWRLD가 <b>덱스터리티(정교 조작)의 표준 벤치마크</b>를 직접 만들었다. 정의조차 없던 개념을 정량화하기 위해 산업 작업을 <b>5,000개 이상의 단위 동작</b>으로 분해했고, 아무리 복잡한 작업도 이들의 조합으로 표현된다는 것을 보였다. VLA 모델 평가 기준을 논의하는 팀이라면 필수 시청.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=UeTtRs_XdI8" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+</div></section>
+<section id="dexterity"><h2>✋ Dexterous Hands · Teleoperation · Hardware</h2><p class="sub">손·팔·원격조작 하드웨어</p><div class="grid">
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/yCMDPHLiQp0" title="From Motor to Dexterous Hand | WUJI&#x27;s Seven-Year Journey" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">WUJI_TECH</span><span class="dot">·</span><span>2026-08-22</span><span class="dot">·</span><span>조회 1,346</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=yCMDPHLiQp0" target="_blank" rel="noopener">From Motor to Dexterous Hand | WUJI&#x27;s Seven-Year Journey</a></h3>
+          <p>모터 하나에서 시작해 <b>다이렉트 드라이브 덱스터러스 핸드</b>까지 도달한 WUJI의 7년 기록. 소규모 공장에서의 초기 시제품부터 양산까지의 과정을 담은 다큐멘터리형 영상으로, 핸드 하드웨어의 실제 난이도를 보여준다.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=yCMDPHLiQp0" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/RCBPIT1--0w" title="See Robots&#x27; Drummer Life 🥁 | NERO Humanoid Arm in Action" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">AgileX Robotics</span><span class="dot">·</span><span>2026-08-19</span><span class="dot">·</span><span>조회 2,443</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=RCBPIT1--0w" target="_blank" rel="noopener">See Robots&#x27; Drummer Life 🥁 | NERO Humanoid Arm in Action</a></h3>
+          <p>WRC 2026 라이브 데모 — <b>7-DoF 마스터 암 1대가 6대의 NERO 듀얼암 로봇을 동시에 원격 제어</b>. 1:N 텔레오퍼레이션으로 데이터 수집 처리량을 배가하는 실용적 접근.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=RCBPIT1--0w" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/3T9cKVp1rlc" title="[DR02Pro][Teleoperation][Pico XR] Upper-body teleoperation with Pico XR" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">DEEP Robotics</span><span class="dot">·</span><span>2026-08-22</span><span class="dot">·</span><span>조회 480</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=3T9cKVp1rlc" target="_blank" rel="noopener">[DR02Pro][Teleoperation][Pico XR] Upper-body teleoperation with Pico XR</a></h3>
+          <p>Pico XR 헤드셋을 이용한 DR02Pro의 <b>상체 전신 텔레오퍼레이션</b>. 시뮬레이션에서 실기까지 동일 인터페이스로 이어지는 파이프라인을 시연.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=3T9cKVp1rlc" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/sBa70b6GoII" title="Autonomous Table Bussing by Torobo2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Tokyo Robotics</span><span class="dot">·</span><span>2026-08-21</span><span class="dot">·</span><span>조회 119</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=sBa70b6GoII" target="_blank" rel="noopener">Autonomous Table Bussing by Torobo2</a></h3>
+          <p>듀얼암 로봇 <b>Torobo2</b>가 카메라 시각 정보만으로 식탁 위 그릇과 천을 트레이에 자율 정리한다. 같은 날 <b>자율 빨래 개기</b>(4U52YaO8g3A)와 <b>연속 태스크 전환</b>(XSHgw42w2iU) 영상도 함께 공개 — 일본 진영의 가정형 조작 자율화 진척을 보여주는 3부작.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=sBa70b6GoII" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/Vg-aWT8I3Jk" title="Take Your Robotics R&amp;D Off-Road! Mobile Robot SCOUT MINI 2.0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">AgileX Robotics</span><span class="dot">·</span><span>2026-08-20</span><span class="dot">·</span><span>조회 1,756</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=Vg-aWT8I3Jk" target="_blank" rel="noopener">Take Your Robotics R&amp;D Off-Road! Mobile Robot SCOUT MINI 2.0</a></h3>
+          <p>연구용 오프로드 모바일 플랫폼 <b>SCOUT MINI 2.0</b>. 실외 험지 데이터 수집·내비게이션 연구용 베이스로 널리 쓰이는 라인의 세대 업데이트.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=Vg-aWT8I3Jk" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/p55r7gn8Xi8" title="Robots are farming now." loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Flexiv Robotics</span><span class="dot">·</span><span>2026-08-19</span><span class="dot">·</span><span>조회 210</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=p55r7gn8Xi8" target="_blank" rel="noopener">Robots are farming now.</a></h3>
+          <p>Flexiv의 힘제어(adaptive force control) 기반 로봇이 <b>농업 작업</b>에 투입된 사례. 불확실한 자연 대상물에 대한 컴플라이언스 제어의 강점을 보여준다.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=p55r7gn8Xi8" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+</div></section>
+<section id="industry"><h2>🏭 Industrial · Service · Logistics</h2><p class="sub">산업/서비스 현장 적용</p><div class="grid">
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/ElyEt7sap9U" title="Noble Machines @ GTC: Live demos" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Noble Machines</span><span class="dot">·</span><span>2026-08-17</span><span class="dot">·</span><span>조회 442</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=ElyEt7sap9U" target="_blank" rel="noopener">Noble Machines @ GTC: Live demos</a></h3>
+          <p>GTC 현장에서 진행한 Noble Machines의 라이브 데모 모음.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=ElyEt7sap9U" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/ihEtnQW4TS4" title="PUDU D7: WRC&#x27;s New Photographer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Pudu Robotics</span><span class="dot">·</span><span>2026-08-21</span><span class="dot">·</span><span>조회 153</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=ihEtnQW4TS4" target="_blank" rel="noopener">PUDU D7: WRC&#x27;s New Photographer</a></h3>
+          <p>푸두 <b>D7</b>이 WRC 2026 현장에서 사진 촬영 임무를 수행. 서비스 로봇의 이벤트 현장 활용 사례.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=ihEtnQW4TS4" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/jEF8nsMMC-w" title="물류자동화, 도입 후 이렇게 달라졌습니다" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">트위니 TWINNY</span><span class="dot">·</span><span>2026-08-20</span><span class="dot">·</span><span>조회 142</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=jEF8nsMMC-w" target="_blank" rel="noopener">물류자동화, 도입 후 이렇게 달라졌습니다</a></h3>
+          <p>국내 자율주행 물류로봇 기업 트위니의 <b>도입 전후 비교</b> 사례. 물류센터 내 반송 자동화의 실측 효과를 정리.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=jEF8nsMMC-w" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/OE2bd9cN8B8" title="KHF 2026 현장 스케치 🤖" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">클로봇 CLOBOT</span><span class="dot">·</span><span>2026-08-20</span><span class="dot">·</span><span>조회 526</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=OE2bd9cN8B8" target="_blank" rel="noopener">KHF 2026 현장 스케치 🤖</a></h3>
+          <p>클로봇의 KHF 2026(국제병원의료산업박람회) 참가 스케치. 병원 환경 청소·서비스 로봇 라인업 전시.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=OE2bd9cN8B8" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/1ev8QcFUarA" title="HDC35-18 롱샤프트 이송·적재 자동화 사례" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">HD현대로보틱스</span><span class="dot">·</span><span>2026-08-21</span><span class="dot">·</span><span>조회 186</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=1ev8QcFUarA" target="_blank" rel="noopener">HDC35-18 롱샤프트 이송·적재 자동화 사례</a></h3>
+          <p>HD현대로보틱스 <b>HDC35-18</b>을 이용한 장축 부품 이송·적재 자동화 레퍼런스(영문판 OJBIoN_i2TA 동시 공개).</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=1ev8QcFUarA" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/DMTOPLH5jhU" title="새로운 Mech-Eye ULTRA M-GL" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Mech-Mind Robotics</span><span class="dot">·</span><span>2026-08-21</span><span class="dot">·</span><span>조회 613</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=DMTOPLH5jhU" target="_blank" rel="noopener">새로운 Mech-Eye ULTRA M-GL</a></h3>
+          <p>초박형 부품·투명 물체·고처리량 애플리케이션을 겨냥한 신형 3D 비전 센서. 빈피킹에서 난이도가 높은 대상군을 정조준했다.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=DMTOPLH5jhU" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/9MCcvfd7NPY" title="From 2.1 to 3.5 Meters: Pushing Palletizing Beyond the Standard" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Dobot Robotics</span><span class="dot">·</span><span>2026-08-19</span><span class="dot">·</span><span>조회 154</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=9MCcvfd7NPY" target="_blank" rel="noopener">From 2.1 to 3.5 Meters: Pushing Palletizing Beyond the Standard</a></h3>
+          <p>팔레타이징 도달 높이를 2.1m에서 <b>3.5m</b>로 확장. 물류 적재 자동화의 표준 스펙 경쟁.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=9MCcvfd7NPY" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/RwKJ5hb4mzo" title="Human Interaction" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">ABB Robotics</span><span class="dot">·</span><span>2026-08-21</span><span class="dot">·</span><span>조회 736</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=RwKJ5hb4mzo" target="_blank" rel="noopener">Human Interaction</a></h3>
+          <p>ABB의 협동로봇 인간-로봇 상호작용 콘텐츠. 같은 주 ABB는 <b>ISO 10218 개정 웨비나</b>(vRwbhxNjuOM), 네스프레소 자동화(FpEoj-lZIOI), 건설 3D 적층(5WAVsdg87to) 등 8편을 집중 업로드했다.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=RwKJ5hb4mzo" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/IMkxf_iyttc" title="ATS6F × OW12-300: Connecting Wafer Transport Across the Fab" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Youibot Robotics</span><span class="dot">·</span><span>2026-08-20</span><span class="dot">·</span><span>조회 60</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=IMkxf_iyttc" target="_blank" rel="noopener">ATS6F × OW12-300: Connecting Wafer Transport Across the Fab</a></h3>
+          <p>반도체 팹 내 <b>웨이퍼 반송</b> AMR 조합 솔루션. 장비 간 연결 구간을 무인화한다.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=IMkxf_iyttc" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/3WXCv0YlkL4" title="Roborock Saros Rover Arrives at the Bernabéu | Roborock x Real Madrid" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Roborock</span><span class="dot">·</span><span>2026-08-22</span><span class="dot">·</span><span>조회 329</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=3WXCv0YlkL4" target="_blank" rel="noopener">Roborock Saros Rover Arrives at the Bernabéu | Roborock x Real Madrid</a></h3>
+          <p>로보락 <b>Saros Rover</b>(다리형 주행 청소로봇)의 레알 마드리드 협업 마케팅. 컨슈머 로봇의 이동 메커니즘 고도화 사례.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=3WXCv0YlkL4" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+</div></section>
+<section id="research"><h2>🎓 Research & Academia</h2><p class="sub">연구/학계</p><div class="grid">
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/SdHuGxSxNgA" title="Generalized Audio-Driven Synthesis of Precise Drummer Motion" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">DisneyResearchHub</span><span class="dot">·</span><span>2026-08-18</span><span class="dot">·</span><span>조회 8,342</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=SdHuGxSxNgA" target="_blank" rel="noopener">Generalized Audio-Driven Synthesis of Precise Drummer Motion</a></h3>
+          <p>오디오만으로 <b>정밀한 드러머 모션을 합성</b>하는 연구. 음악 구동 캐릭터 애니메이션의 난제(타격 타이밍·물리적 정합성)를 다루며, 엔터테인먼트 로봇 모션 생성에도 직접 연결된다.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=SdHuGxSxNgA" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/Yi3qsIbG43k" title="Rapid Swap Battery Contacts" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">MIT Mechanical Engineering</span><span class="dot">·</span><span>2026-08-18</span><span class="dot">·</span><span>조회 1,044</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=Yi3qsIbG43k" target="_blank" rel="noopener">Rapid Swap Battery Contacts</a></h3>
+          <p>로봇 배터리 <b>급속 교체 접점</b> 설계 연구. 휴머노이드/AMR 가동률을 좌우하는 실무적 문제.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=Yi3qsIbG43k" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/sjl2QrJuGPg" title="These Students Helped Seniors Stay Independent" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Georgia Tech Research</span><span class="dot">·</span><span>2026-08-17</span><span class="dot">·</span><span>조회 127</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=sjl2QrJuGPg" target="_blank" rel="noopener">These Students Helped Seniors Stay Independent</a></h3>
+          <p>조지아텍 학생들이 고령자 자립 생활을 돕는 보조 기술을 개발한 프로젝트 소개.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=sjl2QrJuGPg" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/-e_orE18TpA" title="Exploiting TONTOU: The Window in Chips That Leaves Your Data at Risk" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">MIT CSAIL</span><span class="dot">·</span><span>2026-08-19</span><span class="dot">·</span><span>조회 396</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=-e_orE18TpA" target="_blank" rel="noopener">Exploiting TONTOU: The Window in Chips That Leaves Your Data at Risk</a></h3>
+          <p>칩 레벨 보안 취약점 'TONTOU' 연구. 로보틱스 직접 주제는 아니나, 엣지 AI 하드웨어 보안 관점에서 참고.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=-e_orE18TpA" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/eRegmi6BB6k" title="AiBrief - The Black Box Problem" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="cbody">
+          <div class="meta"><span class="ch">Engineered Arts</span><span class="dot">·</span><span>2026-08-19</span><span class="dot">·</span><span>조회 1,805</span></div>
+          <h3><a href="https://www.youtube.com/watch?v=eRegmi6BB6k" target="_blank" rel="noopener">AiBrief - The Black Box Problem</a></h3>
+          <p>Engineered Arts의 AI 해설 시리즈. 로봇에 탑재되는 모델의 <b>블랙박스 문제</b>와 설명가능성을 다룬다.</p>
+          <a class="watch" href="https://www.youtube.com/watch?v=eRegmi6BB6k" target="_blank" rel="noopener">▶ YouTube에서 보기</a>
+        </div>
+      </div>
+</div></section>
+
+<section id="web">
+  <h2>📰 웹 · SNS 라운드업</h2>
+  <p class="sub">같은 기간 X / 뉴스 매체에서 확인된 주요 소식</p>
+  <ul class="webnews"><li><b>Xiaomi, WRC 2026서 첫 휴머노이드 공개</b> — 샤오미가 8/19~23 베이징 WRC 2026에서 <b>키 약 1.7m의 첫 풀사이즈 휴머노이드</b>를 글로벌 공개. 스마트 제조 현장 투입을 1차 목표로 제시했다. <a href="https://en.tempo.co/read/2117842/xiaomi-to-present-humanoid-robot-at-2026-world-robot-conference" target="_blank" rel="noopener">[출처]</a></li>
+<li><b>Vbot, ATOM 휴머노이드 공개 및 사전예약 개시</b> — 생활공간용 '체화지능 단말'을 표방한 <b>Vbot ATOM</b>이 WRC 2026에서 데뷔하고 사전예약을 시작했다. <a href="https://autonews.gasgoo.com/articles/news/wrc-2026-vbot-officially-unveils-atom-humanoid-robot-2090693439292465153" target="_blank" rel="noopener">[출처]</a></li>
+<li><b>WRC 2026 규모: 300개사 · 3,000개 제품</b> — CGTN 보도에 따르면 이번 WRC에는 <b>300개 이상 기업이 3,000개 이상 제품</b>을 전시했으며, 중국 휴머노이드가 최대 화제였다. <a href="https://news.cgtn.com/news/2026-08-22/World-Robot-Conference-What-can-humanoid-robots-actually-do--1POVSXuLR8Q/p.html" target="_blank" rel="noopener">[출처]</a></li>
+<li><b>NVIDIA, VLA 후속으로 World Action Model(WAM) 제시</b> — NVIDIA는 8월 개발자 블로그에서 VLA의 비전-언어 백본을 <b>비디오 월드 모델</b>로 대체해 미래 영상과 로봇 액션을 함께 예측하는 WAM을 공개. 미학습 태스크·환경 일반화에서 VLA 베이스라인을 상회했다고 밝혔다. <a href="https://www.therobotreport.com/vision-language-action-models-are-the-next-leap-in-autonomous-robotics/" target="_blank" rel="noopener">[출처]</a></li></ul>
+</section>
+
+<section id="all">
+  <h2>📋 이번 주 전체 업로드 (나머지 39편)</h2>
+  <p class="sub">위에서 다루지 않은 구독 채널 신규 영상 · 제목 클릭 시 바로 재생</p>
+  <table>
+    <thead><tr><th>날짜</th><th>채널</th><th>제목</th><th style="text-align:right">조회수</th></tr></thead>
+    <tbody><tr><td class="d">2026-08-23</td><td class="c">UBTECH Robotics</td><td><a href="https://www.youtube.com/watch?v=4PU3pBQ6jdQ" target="_blank" rel="noopener">All eyes on U1 ✨👀</a></td><td class="v">298</td></tr>
+<tr><td class="d">2026-08-23</td><td class="c">DEEP Robotics</td><td><a href="https://www.youtube.com/watch?v=3hrJRzTZknI" target="_blank" rel="noopener">DEEP Robotics Fun Welcome Activities (신입생 이사 돕는 로봇개)</a></td><td class="v">188</td></tr>
+<tr><td class="d">2026-08-22</td><td class="c">DEEP Robotics</td><td><a href="https://www.youtube.com/watch?v=UiisDaRjoX0" target="_blank" rel="noopener">DEEP Robotics at WRC 2026</a></td><td class="v">1,229</td></tr>
+<tr><td class="d">2026-08-22</td><td class="c">UBTECH Robotics</td><td><a href="https://www.youtube.com/watch?v=aA3C7z1x32U" target="_blank" rel="noopener">Walker C1 is on duty at WRC 2026!</a></td><td class="v">560</td></tr>
+<tr><td class="d">2026-08-22</td><td class="c">XRoboHub</td><td><a href="https://www.youtube.com/watch?v=fhQ2-fpt4sk" target="_blank" rel="noopener">The Robot Olympics Are Really Here! Tien Kung Robots March In</a></td><td class="v">7,949</td></tr>
+<tr><td class="d">2026-08-22</td><td class="c">Techman Robot</td><td><a href="https://www.youtube.com/watch?v=aVh-iu1Ehgg" target="_blank" rel="noopener">1분 몰입 전시 투어 (Immersive Exhibition Tour)</a></td><td class="v">455</td></tr>
+<tr><td class="d">2026-08-22</td><td class="c">Techman Robot</td><td><a href="https://www.youtube.com/watch?v=6PxH8-KV0kk" target="_blank" rel="noopener">경량 용접 x 고하중 반송 + AI 자동 경로생성 신제품</a></td><td class="v">1,116</td></tr>
+<tr><td class="d">2026-08-22</td><td class="c">ABB Robotics</td><td><a href="https://www.youtube.com/watch?v=3-Pr95_szH0" target="_blank" rel="noopener">The best insights come from those driving automation every day</a></td><td class="v">80</td></tr>
+<tr><td class="d">2026-08-21</td><td class="c">Techman Robot</td><td><a href="https://www.youtube.com/watch?v=C2hXowKPEGs" target="_blank" rel="noopener">FOUP 정밀 반송! TM AI COBOT 반도체 적용</a></td><td class="v">1,252</td></tr>
+<tr><td class="d">2026-08-21</td><td class="c">Tokyo Robotics</td><td><a href="https://www.youtube.com/watch?v=XSHgw42w2iU" target="_blank" rel="noopener">Seamless Task Transition by Torobo2</a></td><td class="v">125</td></tr>
+<tr><td class="d">2026-08-21</td><td class="c">Tokyo Robotics</td><td><a href="https://www.youtube.com/watch?v=4U52YaO8g3A" target="_blank" rel="noopener">Autonomous Laundry Folding by Torobo2</a></td><td class="v">119</td></tr>
+<tr><td class="d">2026-08-21</td><td class="c">HD현대로보틱스</td><td><a href="https://www.youtube.com/watch?v=OJBIoN_i2TA" target="_blank" rel="noopener">HDC35-18 Long Shaft Transfer &amp; Loading Automation (EN)</a></td><td class="v">48</td></tr>
+<tr><td class="d">2026-08-21</td><td class="c">Roborock</td><td><a href="https://www.youtube.com/watch?v=R8OhaQeNdKM" target="_blank" rel="noopener">12 Years of Moments Made Easier</a></td><td class="v">89</td></tr>
+<tr><td class="d">2026-08-21</td><td class="c">Richtech Robotics</td><td><a href="https://www.youtube.com/watch?v=Jtozr84--uI" target="_blank" rel="noopener">Richtech Robotics Live</a></td><td class="v">27</td></tr>
+<tr><td class="d">2026-08-20</td><td class="c">LimX Dynamics</td><td><a href="https://www.youtube.com/watch?v=sxkNbleMXW4" target="_blank" rel="noopener">TRON Camp 2026 Documentary EP.02: From 0 to &quot;Number One&quot;</a></td><td class="v">393</td></tr>
+<tr><td class="d">2026-08-20</td><td class="c">Asimov</td><td><a href="https://www.youtube.com/watch?v=x4xDLzb9OR4" target="_blank" rel="noopener">Day 329 of building Asimov, the most developer-friendly humanoid</a></td><td class="v">2,393</td></tr>
+<tr><td class="d">2026-08-20</td><td class="c">Techman Robot</td><td><a href="https://www.youtube.com/watch?v=DFw-BTZojFw" target="_blank" rel="noopener">TM Xplore I 스마트 물류 실증</a></td><td class="v">446</td></tr>
+<tr><td class="d">2026-08-20</td><td class="c">NVIDIA</td><td><a href="https://www.youtube.com/watch?v=WCRNR1Ve9s0" target="_blank" rel="noopener">Debugging with a Local Agent While You Get Coffee (RTX Spark)</a></td><td class="v">36,676</td></tr>
+<tr><td class="d">2026-08-20</td><td class="c">sudoremove</td><td><a href="https://www.youtube.com/watch?v=iGnIQPH0CIU" target="_blank" rel="noopener">오늘 회사를 시작한다면 - AI Native Startup Playbook</a></td><td class="v">4,423</td></tr>
+<tr><td class="d">2026-08-20</td><td class="c">Hikrobot</td><td><a href="https://www.youtube.com/watch?v=FfXBXzPWg3U" target="_blank" rel="noopener">Weilong: 스낵 입고 효율 90% 향상</a></td><td class="v">84</td></tr>
+<tr><td class="d">2026-08-19</td><td class="c">Asimov</td><td><a href="https://www.youtube.com/watch?v=GvcJA2yLuV0" target="_blank" rel="noopener">Asimov 1&#x27;s torso is durable.</a></td><td class="v">1,533</td></tr>
+<tr><td class="d">2026-08-19</td><td class="c">LimX Dynamics</td><td><a href="https://www.youtube.com/watch?v=RVhOHBaETCk" target="_blank" rel="noopener">Day 1 at the LimX Dynamics booth at WRC 2026</a></td><td class="v">847</td></tr>
+<tr><td class="d">2026-08-19</td><td class="c">ABB Robotics</td><td><a href="https://www.youtube.com/watch?v=vRwbhxNjuOM" target="_blank" rel="noopener">Webinar - ISO 10218 is changing: What does it mean for you</a></td><td class="v">168</td></tr>
+<tr><td class="d">2026-08-19</td><td class="c">ABB Robotics</td><td><a href="https://www.youtube.com/watch?v=2zO7Kj20Pv4" target="_blank" rel="noopener">Automotive automation accelerates</a></td><td class="v">37</td></tr>
+<tr><td class="d">2026-08-19</td><td class="c">ABB Robotics</td><td><a href="https://www.youtube.com/watch?v=0te_mC9OD3s" target="_blank" rel="noopener">PoWa CRB 1910 ASI Setting Overview</a></td><td class="v">114</td></tr>
+<tr><td class="d">2026-08-19</td><td class="c">NVIDIA</td><td><a href="https://www.youtube.com/watch?v=VihWpoINpgE" target="_blank" rel="noopener">More Tokens per Second per Megawatt: Economics of Vera Rubin</a></td><td class="v">4,071</td></tr>
+<tr><td class="d">2026-08-19</td><td class="c">NVIDIA Developer</td><td><a href="https://www.youtube.com/watch?v=D2fQWfIZUD0" target="_blank" rel="noopener">Ask the Experts: What&#x27;s New in the Nemotron Open Family</a></td><td class="v">1,648</td></tr>
+<tr><td class="d">2026-08-19</td><td class="c">Bonsystems Global</td><td><a href="https://www.youtube.com/watch?v=ggstEjfE33Y" target="_blank" rel="noopener">What&#x27;s the Next Mission for This Wheel-Legged Quadruped Robot?</a></td><td class="v">1,290</td></tr>
+<tr><td class="d">2026-08-19</td><td class="c">sudoremove</td><td><a href="https://www.youtube.com/watch?v=hjU7uXG9WQo" target="_blank" rel="noopener">독자 파운데이션 모델 직접 써보기</a></td><td class="v">2,191</td></tr>
+<tr><td class="d">2026-08-19</td><td class="c">sudoremove</td><td><a href="https://www.youtube.com/watch?v=W7j8gJ58gI4" target="_blank" rel="noopener">LLM 티어리스트, Gen-1.5 In-Context Learning, 토크노믹스</a></td><td class="v">411</td></tr>
+<tr><td class="d">2026-08-19</td><td class="c">Roborock</td><td><a href="https://www.youtube.com/watch?v=FHpbTFL3-XA" target="_blank" rel="noopener">12 Years of Roborock</a></td><td class="v">17,877</td></tr>
+<tr><td class="d">2026-08-18</td><td class="c">ABB Robotics</td><td><a href="https://www.youtube.com/watch?v=5WAVsdg87to" target="_blank" rel="noopener">Building the future of construction, one layer at a time</a></td><td class="v">1,507</td></tr>
+<tr><td class="d">2026-08-18</td><td class="c">NVIDIA</td><td><a href="https://www.youtube.com/watch?v=V3GGQXPUIsE" target="_blank" rel="noopener">RTX Spark</a></td><td class="v">7,797</td></tr>
+<tr><td class="d">2026-08-18</td><td class="c">Automate Show</td><td><a href="https://www.youtube.com/watch?v=F5GvTBygKQw" target="_blank" rel="noopener">Why Manufacturers Need to Rethink Automation ROI</a></td><td class="v">67</td></tr>
+<tr><td class="d">2026-08-18</td><td class="c">ロボットダイジェスト</td><td><a href="https://www.youtube.com/watch?v=TK4EPJfyBs8" target="_blank" rel="noopener">와카야마 아이컴, 무전기 조립 자동화</a></td><td class="v">96</td></tr>
+<tr><td class="d">2026-08-17</td><td class="c">NVIDIA Omniverse</td><td><a href="https://www.youtube.com/watch?v=jbyPjjQ4B7U" target="_blank" rel="noopener">Siemens Energy Is Reimagining the Grid with AI</a></td><td class="v">1,474</td></tr>
+<tr><td class="d">2026-08-17</td><td class="c">ABB Robotics</td><td><a href="https://www.youtube.com/watch?v=Prq14JZU-yQ" target="_blank" rel="noopener">Collaborative Robots with Blake Bradley from KEYENCE</a></td><td class="v">1,193</td></tr>
+<tr><td class="d">2026-08-17</td><td class="c">sudoremove</td><td><a href="https://www.youtube.com/watch?v=md7wkVh0ZPs" target="_blank" rel="noopener">월드 액션 모델 DYNA-2 / AI 네이티브 스타트업 플레이북</a></td><td class="v">889</td></tr>
+<tr><td class="d">2026-08-16</td><td class="c">Ishida</td><td><a href="https://www.youtube.com/watch?v=iGlV_LEv6rc" target="_blank" rel="noopener">차세대 계량 시스템 - 리니어 셔틀 계량기 (FOOMA JAPAN 2026)</a></td><td class="v">1,457</td></tr></tbody>
+  </table>
+</section>
+
+<footer>
+  <p>이 뉴스레터는 YouTube 구독 채널 370개의 RSS 피드를 수집해 2026.08.16 ~ 2026.08.23 기간 업로드분(107편)을 선별·요약한 것입니다.
+  조회수는 수집 시점(2026-08-23) 기준이며, 요약은 영상 제목·설명 및 공개 자료를 바탕으로 작성됐습니다.</p>
+  <p>Generated by Claude · 2026-08-23</p>
+</footer>
+</div>
+</body>
+</html>
